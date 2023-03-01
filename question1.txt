@@ -1,0 +1,99 @@
+QUESTION-1:
+-----------
+
+create database and granting permission to create table:
+--------------------------------------------------------
+
+create user Employee identified by system;	
+
+alter user Employee identified by employee455;	
+
+grant create session to Employee;			
+
+grant create table to Employee_details;
+
+grant unlimited tablespace to Employee;
+
+connect Employee/employee455;			
+
+==================================================================================================
+createing table:
+----------------
+
+create table Employee_Details
+(
+Emp_Id number(4),
+Emp_Name varchar2(30),
+Job_Name varchar2(30), 
+Manager_Id number(6), 
+hire_date date,
+salary number(7),
+ Dept_id number(4)
+);
+===================================================================================================
+adding or inserting data to the table:
+--------------------------------------
+
+insert into Employee_Details values(
+4229, 'Raj', 'Designer', 200991, '02-dec-2001', 61001, 2011
+);
+
+insert into Employee_Details values (
+4228, 'Surya', 'Manager', 200992, '23-may-2010', 50000, 1001
+);
+
+insert into Employee_Details values (
+4220, 'Jagan', 'Assistant Manager', 200981, '21-jan-2002', 46000, 1233
+);
+
+insert into Employee_Details values(
+4221, 'Krishna', 'Assistant Manager', 200891, '02-jan-2001', 70000, 1233
+);
+
+insert into Employee_Details values(
+4227, 'Ram', 'Salesman', 202991, '23-nov-2012', 20000, 2021
+);
+
+insert into EMPLOYEE_DETAILS values(
+4226, 'Ganesh', 'Hacker', 210991, '07-feb-2022', 15000, 2301
+);
+
+insert into EMPLOYEE_DETAILS values(
+4225, 'Vijay', 'Salesman', 202991, '10-mar-2011', 38000, 2021
+);
+
+insert into EMPLOYEE_DETAILS values(
+4223, 'Kumar', 'Developer', 290991, '25-dec-2001', 30000, 1111
+);
+
+insert into EMPLOYEE_DETAILS values(
+4212, 'pradeep', 'Designer', 280991, '13-feb-2022', 24000, 2011
+);
+
+insert into EMPLOYEE_DETAILS values(
+5229, 'Naidu', 'CEO', 200121, '15-oct-2000', 73500, 1203
+);
+
+======================================================================================================
+
+setect emp_id,emp_name,salary from table:
+------------------------------------------
+
+select Emp_Id, Emp_Name, Salary from Employee_Details;
+
+====================================================================================================
+
+select the unique designations of the employees from the table:
+-----------------------------------------------------------------
+
+select distinct Job_Name FROM Employee_Details;
+
+===================================================================================================
+
+to update the salary where the employee name is "Raj":
+------------------------------------------------------
+
+update Employee_Details set salary = 30000 where Emp_Name = 'Raj';
+
+
+=========================================================================================================================================================
